@@ -35,15 +35,15 @@ function makeGrid(gridSize){
     let containerEachStyles = {
         'width': `${100/gridSize}%`,
         'height': `${100/gridSize}%`,
-        'border': '.5px solid green',
+        // 'border': '.5px solid green',
         // 'background-color': `#${Math.floor(Math.random()*16777215).toString(16)}`,
-        'background-color': 'grey',
+        'background-color': 'white',
     };
     Array.from(containerEach).forEach(x => Object.assign(x.style, containerEachStyles));
 
     container.addEventListener('mouseover', hoverEffect);
     function hoverEffect(event){
-        event.target.style.backgroundColor = 'white';
+        event.target.style.backgroundColor = 'black';
     }
 }
 gridSize = Number(prompt('Enter Grid Size: '));
