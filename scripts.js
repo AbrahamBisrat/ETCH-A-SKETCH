@@ -46,5 +46,5 @@ function makeGrid(gridSize){
         event.target.style.backgroundColor = 'black';
     }
 }
-gridSize = Number(prompt('Enter Grid Size: '));
+gridSize = Number(prompt('Enter Grid Size: ')) || 20;
 makeGrid(gridSize);
