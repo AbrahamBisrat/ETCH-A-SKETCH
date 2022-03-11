@@ -22,8 +22,11 @@ function makeGrid(gridSize){
         'display': 'flex',
         'flex': '1',
         'flex-wrap': 'wrap',
-        'width': '100%',
-        'height': '97%',
+        'width': '60%',
+        'height': '60%',
+        'flex-basis': '60%',
+        'flex-grow': '0',
+        'box-shadow': '2px 2px 10px black'
     };
     Object.assign(container.style, containerStyles);
     for(let i = 0; i < gridSize * gridSize; i++){
@@ -41,7 +44,7 @@ function makeGrid(gridSize){
     };
     Array.from(containerEach).forEach(x => Object.assign(x.style, containerEachStyles));
 
-    container.addEventListener('mouseover', hoverEffect);
+    container.addEventListener('click', hoverEffect);
     function hoverEffect(event){
         event.target.style.backgroundColor = 'black';
     }
