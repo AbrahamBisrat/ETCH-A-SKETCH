@@ -4,16 +4,19 @@ function p(text){
 p("hellow js");
 let gridSize = 16;
 const controller = document.querySelector('#controller');
+const container = document.querySelector(".container");
 controller.addEventListener('click', function(event){
     let size = Number(prompt("Enter Grid size : "));
-    
+    // clean the previous result
+    while(container.firstChild){
+        container.removeChild(container.firstChild);
+    }
     if(size < 100)
         makeGrid(size);
-    else
+    else // default size
         makeGrid(25);
 })
 function makeGrid(gridSize){
-    const container = document.querySelector(".container");
 
     let containerStyles = {
         'display': 'flex',
