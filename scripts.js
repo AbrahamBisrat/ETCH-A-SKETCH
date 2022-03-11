@@ -16,23 +16,21 @@ let containerStyles = {
 // Object.assign(containerEach.style, containerEachStyles);
 Object.assign(container.style, containerStyles);
 for(let i = 0; i < row * col; i++){
-    container.appendChild(document.createElement('div'));
+    let each = document.createElement('div');
+    each.className = 'each';
+    container.appendChild(each);
 }
 const containerEach = document.querySelectorAll('.container div');
 let containerEachStyles = {
     'width': `${100/col}%`,
     'height': `${100/row}%`,
-    'border': '1px dashed green',
-    'background-color': `#${Math.floor(Math.random()*16777215).toString(16)}`,
+    'border': '.5px solid green',
+    // 'background-color': `#${Math.floor(Math.random()*16777215).toString(16)}`,
+    'background-color': 'grey',
 };
-Array.from(containerEach).forEach(x => {
-        Object.assign(x.style, containerEachStyles);
-        // x.addEventListener('mouseover', hoverEffect);
-    });
+Array.from(containerEach).forEach(x => Object.assign(x.style, containerEachStyles));
+
 container.addEventListener('mouseover', hoverEffect);
 function hoverEffect(event){
-    // p("hovered, clean bubble");
-    // this.style.backgroundColor = 'white';
     event.target.style.backgroundColor = 'white';
 }
-// p(containerEach);
