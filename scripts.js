@@ -2,6 +2,7 @@ function p(text){
     console.log(text);
 }
 p("hellow js");
+const DEFAULT_COLOR = 'white';
 let gridSize = 16;
 const controller = document.querySelector('#controller');
 const container = document.querySelector(".container");
@@ -44,10 +45,27 @@ function makeGrid(gridSize){
     };
     Array.from(containerEach).forEach(x => Object.assign(x.style, containerEachStyles));
 
-    container.addEventListener('click', hoverEffect);
+    // container.addEventListener('click', hoverEffect);
+    container.addEventListener('mousedown', hoverEffect, false);
+    container.addEventListener('mousemove', hoverEffectMoving, false);
+
+    let isClicked = false;
     function hoverEffect(event){
         event.target.style.backgroundColor = 'black';
+        isClicked = true;
     }
+    
+    function hoverEffectMoving(event){
+        if(isClicked)
+            event.target.style.backgroundColor = 'black';
+    }
+
 }
 gridSize = Number(prompt('Enter Grid Size: ')) || 20;
 makeGrid(gridSize);
+
+function resetColor(){
+    Array.from(document.querySelectorAll('.container div')).forEach(
+        x => x.style.backgroundColor = DEFAULT_COLOR
+    );
+};

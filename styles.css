@@ -21,10 +21,12 @@ body{
     border: 1px solid black;
 } */
 .buttons{
-    height: 3vh;
+    /* height: 5vh; */
     width: 100%;
-    display: grid;
-    place-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     padding: 0px;
 }
 button{
@@ -33,5 +35,8 @@ button{
     font-weight: bold;
     text-shadow: 1px 1px rgb(153, 151, 151);
     border: 1px solid black;
-    border-radius: 10%;
+    border-radius: 5%;
+    margin: 3%;
+    width: 20%;
+    height: 20%;
 }
