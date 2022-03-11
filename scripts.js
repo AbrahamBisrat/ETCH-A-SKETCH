@@ -2,8 +2,8 @@ function p(text){
     console.log(text);
 }
 p("hellow js");
-const row = 16;
-const col = 16;
+const col = 50;
+const row = 50;
 const container = document.querySelector(".container");
 
 let containerStyles = {
@@ -20,10 +20,19 @@ for(let i = 0; i < row * col; i++){
 }
 const containerEach = document.querySelectorAll('.container div');
 let containerEachStyles = {
-    'width': '6.25%',
-    'height': '25%',
+    'width': `${100/col}%`,
+    'height': `${100/row}%`,
     'border': '1px dashed green',
-    'background-color': 'yellow',
+    'background-color': `#${Math.floor(Math.random()*16777215).toString(16)}`,
 };
-Array.from(containerEach).forEach(x => Object.assign(x.style, containerEachStyles));
+Array.from(containerEach).forEach(x => {
+        Object.assign(x.style, containerEachStyles);
+        // x.addEventListener('mouseover', hoverEffect);
+    });
+container.addEventListener('mouseover', hoverEffect);
+function hoverEffect(event){
+    // p("hovered, clean bubble");
+    // this.style.backgroundColor = 'white';
+    event.target.style.backgroundColor = 'white';
+}
 // p(containerEach);
