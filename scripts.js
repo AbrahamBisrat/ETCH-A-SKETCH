@@ -61,7 +61,7 @@ function makeGrid(gridSize){
     }
 
 }
-gridSize = Number(prompt('Enter Grid Size: ')) || 20;
+
 makeGrid(gridSize);
 
 function resetColor(){
